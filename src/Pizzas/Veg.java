@@ -19,7 +19,7 @@ class Veg{
 
     Veg(){}
 
-    double identifyCost(String type, String size){
+    double calculateCost(String type, String size){
         int cost;
 
         if (type == "Stuffed"){
@@ -27,10 +27,10 @@ class Veg{
         } else {
             cost = vegNotStuffedPrices.get(size);
         }
-        return calculateBilling(cost);
+        return calculateTax(cost);
     };
 
-    double calculateBilling(int cost){
+    double calculateTax(int cost){
         return (cost * this.tax) + cost;
     };
 

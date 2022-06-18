@@ -14,13 +14,13 @@ class main {
         switch(pizza.category){
             case "Veg":
                 Veg veg = new Veg();
-                System.out.println(veg.identifyCost(pizza.type, pizza.size));
+                System.out.println(veg.calculateCost(pizza.type, pizza.size));
                 billIds += 1;
                 //
                  break;
             case "NonVeg":
                 NonVeg nonVeg = new NonVeg();
-                System.out.println(nonVeg.identifyCost(pizza.type, pizza.size));
+                System.out.println(nonVeg.calculateCost(pizza.type, pizza.size));
                 billIds += 1;
                 //
                 break;

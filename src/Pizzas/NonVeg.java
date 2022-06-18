@@ -21,7 +21,7 @@ class NonVeg extends Accounting{
     NonVeg(){}
 
     @Override
-    double identifyCost(String type, String size){
+    double calculateCost(String type, String size){
         int cost;
 
         if (type == "Stuffed"){
@@ -29,11 +29,11 @@ class NonVeg extends Accounting{
         } else {
             cost = nonVegNotStuffedPrices.get(size);
         }
-        return calculateBilling(cost);
+        return calculateTax(cost);
     }
 
     @Override
-    double calculateBilling(int cost){
+    double calculateTax(int cost){
         return (cost * this.tax) + cost;
     }
 
