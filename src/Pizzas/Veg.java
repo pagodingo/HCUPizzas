@@ -1,9 +1,8 @@
 package Pizzas;
 import java.util.HashMap;
 
-public class Veg{
-    private String vegToppings;
-    private double tax = .05;
+class Veg{
+    double tax = .05;
 
     // Stuffed Prices
     HashMap<String, Integer> vegStuffedPrices = new HashMap<String, Integer>();{
@@ -18,7 +17,9 @@ public class Veg{
         vegNotStuffedPrices.put("Large",80);
     };
 
-    public double identifyCost(String type, String size){
+    Veg(){}
+
+    double identifyCost(String type, String size){
         int cost;
 
         if (type == "Stuffed"){
@@ -29,7 +30,7 @@ public class Veg{
         return calculateBilling(cost);
     };
 
-    public double calculateBilling(int cost){
+    double calculateBilling(int cost){
         return (cost * this.tax) + cost;
     };
 

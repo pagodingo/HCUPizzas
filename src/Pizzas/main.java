@@ -1,11 +1,13 @@
 package Pizzas;
 
-public class main {
-    static int billingId, itemId;
-    public static void main(String args[]){
-        // order;
-        Pizza pizza = new Pizza(1,"Veg","Stuffed","Small");
-        itemId += 1;
+// app
+class main {
+    static int billIds, pizzaIds;
+    // run
+    static void main(String args[]){
+        // order pizza;
+        Pizza pizza = new Pizza(pizzaIds,"Veg","Stuffed","Small");
+        pizzaIds += 1;
         //
 
         // billing;
@@ -13,14 +15,19 @@ public class main {
             case "Veg":
                 Veg veg = new Veg();
                 System.out.println(veg.identifyCost(pizza.type, pizza.size));
-                billingId += 1;
+                billIds += 1;
+                //
                  break;
             case "NonVeg":
                 NonVeg nonVeg = new NonVeg();
                 System.out.println(nonVeg.identifyCost(pizza.type, pizza.size));
-                billingId += 1;
+                billIds += 1;
+                //
                 break;
         }
         //
     }
+    //
 }
+//
+

@@ -1,22 +1,21 @@
 package Pizzas;
 import java.util.ArrayList;
 
-public class Pizza {
+class Pizza {
+    int pizzaId;
     String category;
     String type;
     String size;
-    int itemId, billId, billingCounter, itemIdCounter;
 
     // constructor
-    public Pizza
+    Pizza
     (
-            int itemId,
-            String category,
-            String type,
-            String size)
-    {
-        this.itemId = itemId;
-
+     int pizzaId,
+     String category,
+     String type,
+     String size
+    ) {
+        this.pizzaId = pizzaId;
         validateCategory(category);
         validateType(type);
         validateSize(size);
@@ -24,29 +23,25 @@ public class Pizza {
     //
 
     // getters
-    public int getItemId(){
-        return this.itemId;
+    int getPizzaId(){
+        return this.pizzaId;
     }
 
-    public int getBillId(){
-        return this.billId;
-    }
-
-    public String getCategory(){
+    String getCategory(){
         return this.category;
     }
 
-    public String getType(){
+    String getType(){
         return this.type;
     }
 
-    public String getSize(){
+    String getSize(){
         return this.size;
     }
     //
 
     // validators
-    public boolean validateCategory(String category){
+    boolean validateCategory(String category){
         ArrayList<String> validCategories = new ArrayList<String>();
             validCategories.add("Veg");
             validCategories.add("NonVeg");
@@ -55,12 +50,26 @@ public class Pizza {
             this.category = category;
             return true;
         } else {
-            System.out.println("Sorry, we don't have that category");
+            System.out.println("Sorry, we don't have " + category);
             return false;
         }
     }
 
-    public boolean validateSize(String size){
+    boolean validateType(String type){
+        ArrayList<String> validTypes = new ArrayList<String>();
+        validTypes.add("Stuffed");
+        validTypes.add("Not Stuffed");
+
+        if (validTypes.contains(type)){
+            this.type = type;
+            return true;
+        } else {
+            System.out.println("Sorry, we don't have " + type);
+            return false;
+        }
+    }
+
+    boolean validateSize(String size){
         ArrayList<String> validSizes = new ArrayList<String>();
             validSizes.add("Small");
             validSizes.add("Medium");
@@ -70,19 +79,7 @@ public class Pizza {
             this.size = size;
             return true;
         } else {
-            return false;
-        }
-    }
-
-    public boolean validateType(String type){
-        ArrayList<String> validTypes = new ArrayList<String>();
-            validTypes.add("Stuffed");
-            validTypes.add("Not Stuffed");
-
-        if (validTypes.contains(type)){
-            this.type = type;
-            return true;
-        } else {
+            System.out.println("Sorry, we don't have " + size);
             return false;
         }
     }

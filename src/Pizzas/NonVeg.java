@@ -2,9 +2,8 @@ package Pizzas;
 
 import java.util.HashMap;
 
-public class NonVeg extends Accounting{
-    private String nonVegToppings;
-    private double tax = 0.1;
+class NonVeg extends Accounting{
+    double tax = 0.1;
 
     //Stuffed Prices
     HashMap<String, Integer> nonVegStuffedPrices = new HashMap<String, Integer>();{
@@ -19,9 +18,7 @@ public class NonVeg extends Accounting{
         nonVegNotStuffedPrices.put("Large",120);
     };
 
-    public NonVeg(){this.nonVegToppings = "";}
-
-    /*public String getNonVegToppings(){return this.nonVegToppings;}*/
+    NonVeg(){}
 
     @Override
     double identifyCost(String type, String size){
